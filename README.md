@@ -1,6 +1,10 @@
 # BinaryCookies.swift
 
-Cookie parser for Safari's `Cookies.binarycookies` files
+Cookie parser for Safari's `Cookies.binarycookies` files, located in
+
+	~/Library/Cookies
+
+This is the Swift3 version of the "BinaryCookies.swift", forked from [icodeforlove](https://github.com/icodeforlove/BinaryCookies.swift).
 
 # Cookie Data
 

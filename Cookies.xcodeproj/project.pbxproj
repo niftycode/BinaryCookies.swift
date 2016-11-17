@@ -11,7 +11,6 @@
 		CC4264E21B8227BF0074E254 /* CookiesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4264E11B8227BF0074E254 /* CookiesTest.swift */; };
 		CC4264FE1B82309B0074E254 /* BinaryCookies.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4264FD1B82309B0074E254 /* BinaryCookies.swift */; };
 		CC4264FF1B82309B0074E254 /* BinaryCookies.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4264FD1B82309B0074E254 /* BinaryCookies.swift */; };
-		CC4265011B8230CD0074E254 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC4265001B8230CD0074E254 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -132,11 +131,12 @@
 		CC4264C31B80EFCA0074E254 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Chad Scira";
 				TargetAttributes = {
 					CC4264CA1B80EFCA0074E254 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0810;
 					};
 					CC4264DE1B8227BF0074E254 = {
 						CreatedOnToolsVersion = 7.0;
@@ -166,7 +166,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC4265011B8230CD0074E254 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,8 +206,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -250,8 +251,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -269,6 +272,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -276,6 +280,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -283,6 +288,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -336,6 +342,7 @@
 				CC4264E61B8227BF0074E254 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
