@@ -1,7 +1,5 @@
 # BinaryCookies.swift
 
-**Important**: This code is not working with Safari 11.
-
 Cookie parser for Safari's `Cookies.binarycookies` files, located in
 
 	~/Library/Cookies
