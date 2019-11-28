@@ -2,7 +2,7 @@ import Foundation
 
 extension NSData {
     func toString (_ encoding:UInt) -> String {
-        return NSString(data: self as Data, encoding: encoding) as! String
+        return NSString(data: self as Data, encoding: encoding)! as String
     }
 }
 
@@ -251,10 +251,21 @@ class CookieParser {
 
 open class BinaryCookies {
     
-    class func parse (_ cookiePath:String, callback:@escaping (BinaryCookiesError?, [Cookie]?) -> ()) {
+    class func parse(_ cookiePath:String, callback:@escaping (BinaryCookiesError?, [Cookie]?) -> ()) {
         
         let parser = CookieParser()
+        let cookieURL = URL(fileURLWithPath: cookiePath)
         
+        DispatchQueue.global(qos: .default).async {
+            do {
+                let data: Data = try Data(contentsOf: cookieURL)
+                callback(nil, try parser.processCookieData(data as NSData))
+            } catch {
+                callback(error as? BinaryCookiesError, nil)
+            }
+        }
+        
+        /*
         DispatchQueue.global(qos: .default).async(execute: {
             let data: NSData! = try? NSData(contentsOf: URL(fileURLWithPath: cookiePath))
 
@@ -264,12 +275,23 @@ open class BinaryCookies {
                 callback(error as? BinaryCookiesError, nil)
             }
         })
+        */
     }
     
-    class func parse (_ cookieURL:URL, callback:@escaping (BinaryCookiesError?, [Cookie]?) -> ()) {
+    class func parse(_ cookieURL:URL, callback:@escaping (BinaryCookiesError?, [Cookie]?) -> ()) {
         
         let parser = CookieParser()
         
+        DispatchQueue.global(qos: .default).async {
+            do {
+                let data: Data = try Data(contentsOf: cookieURL)
+                callback(nil, try parser.processCookieData(data as NSData))
+            } catch {
+                callback(error as? BinaryCookiesError, nil)
+            }
+        }
+        
+        /*
         DispatchQueue.global(qos: .default).async(execute: {
             let data: NSData! = try? NSData(contentsOf: cookieURL)
             
@@ -279,6 +301,7 @@ open class BinaryCookies {
                 callback(error as? BinaryCookiesError, nil)
             }
         })
+        */
     }
     
     class func parse (_ data: NSData, callback:@escaping (BinaryCookiesError?, [Cookie]?) -> ()) {
